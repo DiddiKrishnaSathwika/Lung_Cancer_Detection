@@ -19,7 +19,7 @@ uploaded_file = st.file_uploader("Upload CT Scan Image", type=["jpg", "jpeg", "p
 
 if uploaded_file is not None:
     image = Image.open(uploaded_file).convert("RGB")
-    st.image(image, caption="Uploaded CT Scan", width='stretch')
+    st.image(image, caption="Uploaded CT Scan", use_column_width=True)
 
     img = image.resize((224, 224))
     img_array = np.array(img) / 255.0
